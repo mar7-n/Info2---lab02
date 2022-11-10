@@ -1,56 +1,48 @@
-package LAB02;
+public class lab02 {
+    static int count;
 
-public class IsPrime {
+    public static void main(String[] args){
+        //h.fragment1(4);
+        int num = 524288; // lowest number with 20 bits
+        for(int i=0;i<100;i++){
+            String result = isPrime(num) ? "Prime" : "not Prime";
+            System.out.println("The number " + num + " is: " + result + " and the for was running " +
+            count + " times.\n");
+            num++;
+        }
+    }
 
-    public static void main(String[] args) {
-        int i, n = 5;
-        boolean isprime = true;
+    public static boolean isPrime(int n){
+        boolean isPrime = true;
 
         // 0 and 1 are not prime numbers also, negative numbers are not prime
         if (n < 2) {
-            isprime = false;
+            isPrime = false;
         } else {
-            for (i = 2; i < n; i++) {
+            count = 0;
+            for (int i = 2; i <= n/2; i++) {
                 if (n % i == 0) {
-                    isprime = false;
+                    isPrime = false;
                     break;
+                }
+                count++;
+            }
+        }
+        return isPrime;
+    }
+    public void fragment1(int n) {
+        int sum = 0;
+        for ( int i = 1; i < n; i ++) {
+            for (int j = 0; j < n * n; j++) {
+                if (j % i == 0) {
+                    for (int k = 0; k < j; k++)
+                        sum++;
                 }
             }
         }
-
-        String result = isprime ? "Prime" : "not Prime";
-        System.out.println("The number " + n + " is : " + result);
+        System.out.print(sum);
     }
 }
-// Time Complexity : O(N)
-// Space Complexity : O(1)
-
-
-
-
-
-    /* public static void main(String[] args) {
-
-        isPrime();
-    }
-
-    public static boolean isPrime()
-        {
-            int n=0;
-            if (n <= 1) //если наше число равно 1 = это не простое число
-                return false; // возращаем фолз
-
-            for (int i = 2; i < n; i++) {
-
-                if (n % i == 0) { // если наше число н при деление на какое то число и ,которое меньше нашего заданного числа, дает остаток 0
-                    return false;
-                }// это так же не простое число
-
-            }
-            return true;
-        }*/
-
-
 
 
 
