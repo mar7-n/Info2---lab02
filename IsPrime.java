@@ -22,7 +22,7 @@ public class lab02 {
         if (n < 2L) {
             isPrime = false;
         } else {
-            for (long i = 2L; i <= n/2L; i++) {
+            for (long i = 2L; i <= Math.sqrt(n); i++) {
                 if (n % i == 0L) {
                     isPrime = false;
                     break;
