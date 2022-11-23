@@ -9,7 +9,7 @@ public class lab02 {
         for(int i=0;i<100;i++){
             String result = isPrime(num) ? "Prime" : "not Prime";
             System.out.println("The number " + num + " is: " + result + " and the for ran " +
-            count + " times.\n");
+            count + " times." + i + "\n");
             num++;
         }
     }
@@ -32,36 +32,19 @@ public class lab02 {
         }
         return isPrime;
     }
-}
-// Time Complexity : O(N)
-// Space Complexity : O(1)
-
-
-
-
-
-    /* public static void main(String[] args) {
-
-        isPrime();
-    }
-
-    public static boolean isPrime()
-        {
-            int n=0;
-            if (n <= 1) //если наше число равно 1 = это не простое число
-                return false; // возращаем фолз
-
-            for (int i = 2; i < n; i++) {
-
-                if (n % i == 0) { // если наше число н при деление на какое то число и ,которое меньше нашего заданного числа, дает остаток 0
-                    return false;
-                }// это так же не простое число
-
+    public void fragment1(int n) {
+        int sum = 0;
+        for ( int i = 1; i < n; i ++) {
+            for (int j = 0; j < n * n; j++) {
+                if (j % i == 0) {
+                    for (int k = 0; k < j; k++)
+                        sum++;
+                }
             }
-            return true;
-        }*/
-
-
+        }
+        System.out.print(sum);
+    }
+}
 
 
 
